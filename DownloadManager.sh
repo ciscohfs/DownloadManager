@@ -3,9 +3,8 @@
 
 read -p "please give me Url : " answer
 
-answer2=answer
 
-if [ "$answer2" = Url ];then
+if [ -n "$answer" ];then
     echo "OK! i try it!"
     echo -ne '#####                     (33%)\r'
     sleep 1
@@ -13,6 +12,7 @@ if [ "$answer2" = Url ];then
     sleep 1
     echo -ne '#######################   (100%)\r'
     echo -ne '\n'
-    curl -O answer2
-
+    curl -v -O answer
+else
+    echo "not use Url"
 fi
